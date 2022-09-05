@@ -1,6 +1,6 @@
 package Catalyst::ControllerPerContext;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Moose;
 extends 'Catalyst::Controller';
@@ -13,7 +13,7 @@ sub COMPONENT {
 
   ## All this crazy will probably break if you do even more insane things
   my $application_self = bless $args, $class;
-  $application_self->{_application} = $class;
+  $application_self->{_application} = $app;
 
   my $action  = delete $args->{action}  || {};
   my $actions = delete $args->{actions} || {};

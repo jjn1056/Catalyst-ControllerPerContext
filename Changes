@@ -1,5 +1,9 @@
 # This file documents the revision history for Perl extension CatalystX-ControllerPerContext.
 
+0.002 - 05 September 2022
+  - Properly set the application class attribute. This was a serious bug so you should
+    probably upgrade.  Happy US Labor Day!
+
 0.001 - 21 July 2022
   - First Release
 
