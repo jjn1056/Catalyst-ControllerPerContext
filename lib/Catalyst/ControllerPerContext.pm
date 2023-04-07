@@ -1,6 +1,6 @@
 package Catalyst::ControllerPerContext;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use Moose;
 extends 'Catalyst::Controller';
@@ -22,6 +22,7 @@ sub COMPONENT {
   $application_self->{_action_role_args} =  delete($application_self->{action_roles}) || [];
   $application_self->{path_prefix} =  delete $application_self->{path} if exists $application_self->{path};
   $application_self->{_action_roles} = $application_self->_build__action_roles;
+  $application_self->{action_namespace} = $application_self->{namespace} if exists $application_self->{namespace};
 
   return $application_self;
 }

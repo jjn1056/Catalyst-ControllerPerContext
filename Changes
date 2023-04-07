@@ -1,5 +1,8 @@
 # This file documents the revision history for Perl extension CatalystX-ControllerPerContext.
 
+0.003 - 06 April 2023
+  - Properly set the action namespace if the namespace configuration option is set
+  
 0.002 - 05 September 2022
   - Properly set the application class attribute. This was a serious bug so you should
     probably upgrade.  Happy US Labor Day!
