@@ -1,5 +1,8 @@
 # This file documents the revision history for Perl extension CatalystX-ControllerPerContext.
 
+0.004 - 03 June 2023
+  - fix dist metadata errors
+
 0.003 - 06 April 2023
   - Properly set the action namespace if the namespace configuration option is set
   
