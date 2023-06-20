@@ -1,6 +1,6 @@
 package Catalyst::ControllerPerContext;
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 use Moose;
 extends 'Catalyst::Controller';
@@ -10,6 +10,7 @@ has 'ctx' => (is=>'ro', required=>1);
 sub COMPONENT {
   my ($class, $app, $args) = @_;
   $args = $class->merge_config_hashes($args, $class->_config);
+  $args = $class->process_component_args($app, $args) if $class->can('process_component_args');
 
   ## All this crazy will probably break if you do even more insane things
   my $application_self = bless $args, $class;
@@ -107,7 +108,7 @@ L<Catalyst::Runtime>, L<Catalyst::Controller>
 
 =head1 COPYRIGHT
  
-    2022
+    2023
 
 =head1 LICENSE
 
